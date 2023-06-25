@@ -8,4 +8,8 @@ import java.util.List;
 public interface CustomerService {
     List<CustomerResponse> fetchCustomers ();
     CustomerResponse addCustomer(CustomerRequest request);
+
+    CustomerResponse getCustomer(String id);
+
+    CustomerResponse getCustomerByEmail(String email);
 }

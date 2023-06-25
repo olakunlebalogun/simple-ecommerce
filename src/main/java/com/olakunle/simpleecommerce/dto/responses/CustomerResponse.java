@@ -8,6 +8,7 @@ import java.util.List;
 
 @Data
 public class CustomerResponse {
+    private String id;
     private String firstName;
     private String lastName;
     private String phoneNumber;
