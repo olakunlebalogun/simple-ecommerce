@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  mongo-service:
+    image: mongo:latest
+    volumes:
+      - ./data:/data
+    ports:
+      - "27018:27017"
+    container_name: mongo_service
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=mongolia
+      - MONGO_INITDB_ROOT_PASSWORD=247balo
+  mongo-ui:
+    image: mongo-express:latest
+    restart: always
+    ports:
+      - "8082:8081"
+    container_name: mongo_exp_ui
+    environment:
+      - ME_CONFIG_MONGODB_ADMINUSERNAME=mongolia
+      - ME_CONFIG_MONGODB_ADMINPASSWORD=247balo
+      - ME_CONFIG_MONGODB_SERVER=mongo_service
+      # - ME_CONFIG_MONGODB_URL=mongodb://mongolia:247balo@mongo:27018/
+networks:
+  default:
+    name: docker_net_mongo
+
+volumes:
+  data: {}
+
+
+
+
