@@ -7,6 +7,7 @@ import jakarta.validation.constraints.NotEmpty;
 import lombok.Data;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Data
 public class CustomerRequest {
@@ -16,10 +17,10 @@ public class CustomerRequest {
     @NotEmpty
     @NotBlank
     private String lastName;
-    @NotEmpty
-    @NotBlank
-    private String address;
-    //    private List<Address> address;
+//    @NotEmpty
+//    @NotBlank
+//    private String address;
+        private List<Address> address;
     @NotEmpty
     @NotBlank
     private String phoneNumber;
